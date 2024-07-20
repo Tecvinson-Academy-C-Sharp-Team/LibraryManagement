@@ -14,5 +14,10 @@ namespace LibraryManagement.Data.Entity
         public bool IsActive { get; set; }
 
         public List<LibraryItem> BorrowedItems { get; set; } = new List<LibraryItem>();
+
+        public override string GetDetails()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
