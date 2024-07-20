@@ -12,6 +12,6 @@ namespace LibraryManagement.Data.Entity
         // DVD
         // Magazine
 
-        //public abstract string GetDetails();
+        // public abstract string GetDetails();
     }
 }
