@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LibraryManagement.Data.Entity
 {
-    public abstract class LibraryItem
+    public class LibraryItem
     {
         public Book? Book { get; set; }
         // DVD

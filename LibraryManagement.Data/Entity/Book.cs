@@ -12,5 +12,10 @@ namespace LibraryManagement.Data.Entity
         public bool IsAvailable { get; set; } = true;
         public string Author { get; set; }
         public string ISBN { get; set; }
+
+        public override string GetDetails()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
