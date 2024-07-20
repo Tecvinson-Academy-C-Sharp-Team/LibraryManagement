@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace LibraryManagement.Data.Entity
 {
-    public abstract class LibraryItem : BaseEntity
+    public abstract class LibraryItem
     {
-        public string Title { get; set; }
+        public Book? Book { get; set; }
+        // DVD
+        // Magazine
 
-        public string Description { get; set; }
-
-        public abstract string GetDetails();
+        //public abstract string GetDetails();
     }
 }
