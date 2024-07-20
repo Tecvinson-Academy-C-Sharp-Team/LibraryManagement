@@ -10,9 +10,16 @@ namespace LibraryManagement.BusinessLogic.Service
 {
     public class LibraryService : ILibraryService
     {
+        private List<LibraryItem> _libraryItems = new List<LibraryItem>();
+
         public async Task<Book> AddBookToLibrary(Book book)
         {
-            throw new NotImplementedException();
+            // remove stub code ...
+
+            LibraryItem libraryItem = new LibraryItem();
+            libraryItem.Books.Add(book);
+
+            return book;
         }
 
         public async Task<Book> UpdateBook(Book book)

@@ -8,7 +8,7 @@ namespace LibraryManagement.Data.Entity
 {
     public class LibraryItem
     {
-        public Book? Book { get; set; }
+        public List<Book>? Books { get; set; }
         public DVD? Dvd { get; set; }
         public Magazine? Magazine { get; set; }
 
