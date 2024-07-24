@@ -74,6 +74,16 @@ namespace LibraryManagement.BusinessLogic.Service
             return existingBook;
         }
 
+        public async Task<Member> AddMemberToLibrary(Member member)
+        {
+            _libraryContext.Members.Add(member);
+
+            string msg = $"A member with name: {member.Name} was added to our library!";
+            OnBookAdded?.Invoke(msg);
+
+            return book;
+        }
+
         public async Task<Book> CreateBook(Book book)
         {
             throw new NotImplementedException();
@@ -135,6 +145,10 @@ namespace LibraryManagement.BusinessLogic.Service
         }
 
         public async Task<LibraryItem> ReturnLibraryItem(LibraryItem libraryItem)
+        {
+            throw new NotImplementedException();
+        }
+        public async Task<Member> AddMemberToLibrary(Member member)
         {
             throw new NotImplementedException();
         }

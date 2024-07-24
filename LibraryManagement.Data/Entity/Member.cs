@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace LibraryManagement.Data.Entity
 {
-    public class User : BaseEntity
+    public class Member : BaseEntity
     {
-
         public string Name { get; set; }
         public string Email { get; set; }
         public bool IsAdmin { get; set; }
