@@ -11,7 +11,6 @@ namespace LibraryManagement.Data.Data
 {
     public class LibraryContext : DbContext
     {
-
         public DbSet<Book> Books { get; set; }
         public DbSet<DVD> Dvds { get; set; }
         public DbSet<Magazine> Magazines { get; set; }

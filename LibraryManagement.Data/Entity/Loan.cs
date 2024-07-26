@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace LibraryManagement.Data.Entity
     {
-    public class Loan {
-        public long borrowId { get; set; }
-        public DateTime borrowDate { get; set; }
-        public DateTime returnDate { get; set; }
-        public long itemID { get; set; }
+    public class Loan
+    {
+        public long BorrowId { get; set; }
+        public DateTime BorrowDate { get; set; }
+        public DateTime ReturnDate { get; set; }
+        public long LibraryItemId { get; set; }
         }
     }

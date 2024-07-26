@@ -1,15 +1,28 @@
 ﻿using LibraryManagement.BusinessLogic.Service;
+using LibraryManagement.Data.Data;
 using LibraryManagement.Data.Entity;
 using LibraryManagement.Data.Service;
+using System.Threading.Channels;
 
-Console.WriteLine("Welcome to C# group Library Management System!");
-Console.WriteLine("How can I be of service?");
-
-Book book = new Book()
+namespace LibraryManagement.Presentation
 {
-    Id = 1,
-    Title = "Things fall apart"
-};
+    public class Program
+    {
+        public static async Task Main(string[] args)
+        {
+            ILibraryService libraryService = new LibraryService(new());
 
-ILibraryService libraryService = new LibraryService(new());
-libraryService.AddBookToLibrary(book);
+            Book book = new Book()
+            {
+                Id = 1,
+                Title = "Things fall apart"
+            };
+
+            // create new member entity
+
+            {
+                
+            }
+        }
+    }
+}

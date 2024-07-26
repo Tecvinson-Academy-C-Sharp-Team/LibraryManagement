@@ -26,6 +26,14 @@ namespace LibraryManagement.BusinessLogic.Service
 
         public event Notify? OnBookRemoved;
 
+        public event Notify? OnDvdAdded;
+
+        public event Notify? OnDvdRemoved;
+
+        public event Notify? OnMagazineAdded;
+
+        public event Notify? OnMagazineRemoved;
+
         public event Notify? OnBorrowLibraryItem;
 
         public event Notify? OnReturnLibraryItem;
@@ -50,6 +58,10 @@ namespace LibraryManagement.BusinessLogic.Service
 
             return book;
         }
+        public async Task<Book> CreateBook(Book book)
+        {
+            throw new NotImplementedException();
+        }
 
         public async Task<Book> UpdateBook(Book book)
         {
@@ -72,21 +84,6 @@ namespace LibraryManagement.BusinessLogic.Service
             _libraryContext.Books.Remove(existingBook);
 
             return existingBook;
-        }
-
-        public async Task<Member> AddMemberToLibrary(Member member)
-        {
-            _libraryContext.Members.Add(member);
-
-            string msg = $"A member with name: {member.Name} was added to our library!";
-            OnBookAdded?.Invoke(msg);
-
-            return book;
-        }
-
-        public async Task<Book> CreateBook(Book book)
-        {
-            throw new NotImplementedException();
         }
 
         public async Task<DVD> CreateDVD(DVD dvd)
@@ -119,12 +116,37 @@ namespace LibraryManagement.BusinessLogic.Service
             throw new NotImplementedException();
         }
 
-        public async Task DeleteMagazine(long Id)
+        public async Task<Magazine> DeleteMagazine(long Id)
         {
             throw new NotImplementedException();
         }
 
         public async Task<Magazine> AddMagazineToLibrary(Magazine magazine)
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task<Loan> AddLoan(Loan loan)
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task<Loan> UpdateLoan(Loan loan)
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task<Loan> DeleteLoan(Loan loan)
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task<Loan> GetLoanById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task<Loan> GetAllLoans(Loan loan)
         {
             throw new NotImplementedException();
         }
@@ -145,10 +167,6 @@ namespace LibraryManagement.BusinessLogic.Service
         }
 
         public async Task<LibraryItem> ReturnLibraryItem(LibraryItem libraryItem)
-        {
-            throw new NotImplementedException();
-        }
-        public async Task<Member> AddMemberToLibrary(Member member)
         {
             throw new NotImplementedException();
         }
