@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\LibraryManagement.BusinessLogic\LibraryManagement.BusinessLogic.csproj" />
+    <ProjectReference Include="..\LibraryManagement.Data\LibraryManagement.Data.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

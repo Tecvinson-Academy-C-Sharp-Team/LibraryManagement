@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LibraryManagement.Data.Entity
 {
-    public class User : BaseEntity
+    public class Member : BaseEntity
     {
         public string Name { get; set; }
         public string Email { get; set; }
@@ -18,6 +18,7 @@ namespace LibraryManagement.Data.Entity
         public override string GetDetails()
         {
             throw new NotImplementedException();
+
         }
     }
 }

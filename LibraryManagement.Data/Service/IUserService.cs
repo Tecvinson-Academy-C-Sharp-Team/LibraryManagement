@@ -9,16 +9,18 @@ namespace LibraryManagement.Data.Service
 {
     public interface IUserService
     {
-        Task<bool> AddNewUser(User user);
+        Task<bool> AddNewUser(Member user);
 
-        Task<User> UpdateUser(User user);
+        Task<Member> UpdateUser(Member user);
 
-        Task DeleteUser(User user);
+        Task DeleteUser(Member user);
 
-        Task<User> GetUserById(long id);
+        Task<Member> GetUserById(long id);
 
-        Task<User> GetUserByName(string name);
+        Task<Member> GetUserByName(string name);
 
-        Task<User> GetUserByEmail(string email);
+        Task<Member> GetUserByEmail(string email);
+
+      //  Task<List<Member>> GetAllUsers();
     }
 }
