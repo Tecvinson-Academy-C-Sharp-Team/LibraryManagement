@@ -9,6 +9,7 @@ namespace LibraryManagement.Data.Entity
     public abstract class BaseEntity
     {
         public long Id { get; set; }
+        public long MemberID { get; set; }
         public DateTime CreatedOn { get; set; }
         public DateTime UpdatedOn { get; set; }
 
