@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using LibraryManagement.Data.Data;
+using LibraryManagement.Data;
 using LibraryManagement.Data.Entity;
 using LibraryManagement.Data.Service;
 using static System.Runtime.InteropServices.JavaScript.JSType;
@@ -56,7 +56,7 @@ namespace LibraryManagement.BusinessLogic.Service
             // LINQ: Language integrated query
             // C#: var existingBook = _libraryContext.Books.Where(b => b.Id.Equals(book.Id)).SingleOrDefault();
             // SQL: SELECT * FROM BOOK WHERE Id = book.Id;
-            var libItem = _libraryItems.Select(e => e.Dvd).FirstOrDefault();
+            // var libItem = _libraryItems.Select(e => e.Dvd).FirstOrDefault();
             var existingBook = _libraryContext.Books.Where(b => b.Id.Equals(book.Id)).SingleOrDefault();
 
             var b = _libraryContext.Books.Update(book);
