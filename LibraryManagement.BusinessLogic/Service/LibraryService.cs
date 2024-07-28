@@ -56,7 +56,7 @@ namespace LibraryManagement.BusinessLogic.Service
             // LINQ: Language integrated query
             // C#: var existingBook = _libraryContext.Books.Where(b => b.Id.Equals(book.Id)).SingleOrDefault();
             // SQL: SELECT * FROM BOOK WHERE Id = book.Id;
-
+            var libItem = _libraryItems.Select(e => e.Dvd).FirstOrDefault();
             var existingBook = _libraryContext.Books.Where(b => b.Id.Equals(book.Id)).SingleOrDefault();
 
             var b = _libraryContext.Books.Update(book);

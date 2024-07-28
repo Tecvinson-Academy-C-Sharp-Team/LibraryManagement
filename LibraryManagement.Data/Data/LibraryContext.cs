@@ -16,5 +16,10 @@ namespace LibraryManagement.Data.Data
         public DbSet<DVD> Dvds { get; set; }
         public DbSet<Magazine> Magazines { get; set; }
         public DbSet<LibraryItem> LibraryItems { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlite("Data Source=library.db");
+        }
     }
 }
