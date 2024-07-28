@@ -13,6 +13,9 @@ namespace LibraryManagement.Data.Entity
         public string Author { get; set; }
         public string ISBN { get; set; }
 
+        public long LibraryItemId { get; set; }
+        public LibraryItem LibraryItem { get; set; }
+
         public override string GetDetails()
         {
             throw new NotImplementedException();
