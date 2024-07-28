@@ -10,11 +10,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace LibraryManagement.BusinessLogic.Service
 {
-    public class UserService : IUserService
+    public class MemberService : IUserService
     {
         private readonly LibraryContext _context;
 
-        public UserService(LibraryContext context)
+        public MemberService(LibraryContext context)
         {
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
@@ -27,7 +27,7 @@ namespace LibraryManagement.BusinessLogic.Service
             }
             try
             {
-                _context.Users.Add(user);
+                _context.Members.Add(user);
                 var result = await _context.SaveChangesAsync();
                 return result > 0;
             }
@@ -49,7 +49,7 @@ namespace LibraryManagement.BusinessLogic.Service
                 throw new ArgumentNullException(nameof(user));
             }
 
-            var existingUser = await _context.Users.FindAsync(user.Id);
+            var existingUser = await _context.Members.FindAsync(user.Id);
             if (existingUser == null)
             {
                 throw new InvalidOperationException("User not found");
@@ -71,19 +71,19 @@ namespace LibraryManagement.BusinessLogic.Service
                 throw new ArgumentNullException(nameof(user));
             }
 
-            var existingUser = await _context.Users.FindAsync(user.Id);
+            var existingUser = await _context.Members.FindAsync(user.Id);
             if (existingUser == null)
             {
                 throw new InvalidOperationException("User not found");
             }
 
-            _context.Users.Remove(existingUser);
+            _context.Members.Remove(existingUser);
             await _context.SaveChangesAsync();
         }
 
         public async Task<Member> GetUserById(long id)
         {
-            var user = await _context.Users.FindAsync(id);
+            var user = await _context.Members.FindAsync(id);
             if (user == null)
             {
                 throw new InvalidOperationException("User not found");
@@ -94,7 +94,7 @@ namespace LibraryManagement.BusinessLogic.Service
 
         public async Task<Member> GetUserByName(string name)
         {
-            var user = await _context.Users.FirstOrDefaultAsync(u => u.Name == name);
+            var user = await _context.Members.FirstOrDefaultAsync(u => u.Name == name);
             if (user == null)
             {
                 throw new InvalidOperationException("User not found");
@@ -105,7 +105,7 @@ namespace LibraryManagement.BusinessLogic.Service
 
         public async Task<Member> GetUserByEmail(string email)
         {
-            var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
+            var user = await _context.Members.FirstOrDefaultAsync(u => u.Email == email);
             if (user == null)
             {
                 throw new InvalidOperationException("User not found");

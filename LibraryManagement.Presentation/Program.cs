@@ -9,7 +9,7 @@ using LibraryManagement.Data.Service;
 
 var libraryContext = new LibraryContext();
 var libraryService = new LibraryService(libraryContext);
-var userService = new UserService(libraryContext);
+var userService = new MemberService(libraryContext);
 
 libraryService.OnBookAdded += message => Console.WriteLine($"Event: {message}");
 libraryService.OnBookRemoved += message => Console.WriteLine($"Event: {message}");
@@ -67,7 +67,7 @@ while (running)
 }
         
 
-        static async Task RegisterNewUser(UserService userService)
+        static async Task RegisterNewUser(MemberService userService)
 {
     Console.Write("Enter Name: ");
     string name = Console.ReadLine();
@@ -96,7 +96,7 @@ while (running)
     }
 }
 
-static async Task PerformUserOperations(LibraryService libraryService, UserService userService)
+static async Task PerformUserOperations(LibraryService libraryService, MemberService userService)
 {
     bool userOperationRunning = true;
 
@@ -246,7 +246,7 @@ static async Task ReturnItem(LibraryService libraryService)
     Console.WriteLine($"Returned Item: {title}");
 }
 
-static async Task UpdateMember(UserService userService)
+static async Task UpdateMember(MemberService userService)
 {
     Console.Write("Enter MemberID to Update: ");
     if (long.TryParse(Console.ReadLine(), out long memberId))
@@ -278,7 +278,7 @@ static async Task UpdateMember(UserService userService)
     }
 }
 
-static async Task DeleteMember(UserService userService)
+static async Task DeleteMember(MemberService userService)
 {
     Console.Write("Enter MemberID to Delete: ");
     if (long.TryParse(Console.ReadLine(), out long memberId))
@@ -300,7 +300,7 @@ static async Task DeleteMember(UserService userService)
     }
 }
 
-static async Task ListMembers(UserService userService)
+static async Task ListMembers(MemberService userService)
 {
     Console.WriteLine("Listing all members...");
     // This method assumes that GetUserById can return a list or similar. Adjust according to your actual method.

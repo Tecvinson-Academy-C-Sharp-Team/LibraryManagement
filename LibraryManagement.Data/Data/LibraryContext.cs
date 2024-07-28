@@ -12,9 +12,10 @@ namespace LibraryManagement.Data.Data
     {
        
         public DbSet<Book> Books { get; set; }
-        public DbSet<Member> Users { get; set; }
         public DbSet<DVD> Dvds { get; set; }
         public DbSet<Magazine> Magazines { get; set; }
+        public DbSet<Member> Members { get; set; }
+        public DbSet<Member> Loans { get; set; }
         public DbSet<LibraryItem> LibraryItems { get; set; }
     }
 }
