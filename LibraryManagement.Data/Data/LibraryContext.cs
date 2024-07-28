@@ -10,7 +10,11 @@ namespace LibraryManagement.Data.Data
 {
     public class LibraryContext : DbContext
     {
-       
+
+        public LibraryContext(DbContextOptions<LibraryContext> options) : base(options)
+        {
+
+        }
         public DbSet<Book> Books { get; set; }
         public DbSet<DVD> Dvds { get; set; }
         public DbSet<Magazine> Magazines { get; set; }
